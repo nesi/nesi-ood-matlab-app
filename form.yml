@@ -1,0 +1,53 @@
+---
+cluster: "slurm"
+
+title: MATLAB
+
+description: |
+  This app will launch a MATLAB GUI
+attributes:
+  bc_num_slots: "1"
+  bc_vnc_resolution:
+    required: true
+  version:
+    widget: select
+    label: "MATLAB version"
+    help: "This defines the version of MATLAB you want to load."
+    options:
+      - [ "MATLAB/2023b" ]
+      - [ "MATLAB/2023b" ]
+  bc_account:
+    label: "Account"
+    help: "If left blank default account will be used"
+  node: ""
+  bc_queue:
+    value: interactive
+  bc_num_hours:
+    max: 8
+    min: 1
+    step: 1
+    value: 1
+    widget: number_field
+  num_cores:
+    label: Number of cores
+    max: 16
+    min: 1
+    value: 2
+    widget: number_field
+  num_mem:
+    label: Memory per job (GB)
+    max: 32
+    min: 1
+    step: 1
+    value: 1
+    widget: number_field
+form:
+  - version
+  - bc_account
+  - bc_queue
+  - node_type
+  - bc_vnc_resolution
+  - bc_num_hours
+  - num_cores
+  - num_mem
+  - node
