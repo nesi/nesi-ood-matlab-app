@@ -1,4 +1,4 @@
 # Export the module function if it exists
 [[ $(type -t module) == "function" ]] && export -f module
 
-exec &> >(tee -a "pod.log"
+exec &> >(tee -a "pod.log")
